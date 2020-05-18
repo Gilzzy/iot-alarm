@@ -7,16 +7,17 @@ import os
 from datetime import datetime
 import subprocess
 
+#PiFaceCAD Setup
 cad = pifacecad.PiFaceCAD()
 cad.lcd.clear()
 cad.lcd.backlight_on()
 cad.lcd.blink_off()
 
+#Global Variables
 count = 1
 backlight = 1
-
-time_alarm = str("06:30")
-time_input = str("22:00")
+time_wake = str("06:30")
+time_sleep = str("22:00")
 #current_date = str("2019/02/18")
 
 #time_alarm_test = datetime.strptime('%s %s'%(current_date, time_input),"%Y/%m/%d  %H:%M:%S")
@@ -36,11 +37,11 @@ while (count > 0):
 #	print(date.strftime("%H:%M:%S"))
 
 	if backlight == 0:
-		if time_alarm == date.strftime("%H:%M"):
+		if time_wake == date.strftime("%H:%M"):
 			cad.lcd.backlight_on()
 			backlight = 1
 	else :
-		if time_input == date.strftime("%H:%M"):
+		if time_sleep == date.strftime("%H:%M"):
 			cad.lcd.backlight_off()
 			backlight = 0
 
