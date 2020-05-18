@@ -70,17 +70,30 @@ def display_2(x):
 	cad.lcd.write_custom_bitmap(3)
 	cad.lcd.write_custom_bitmap(4)
 	cad.lcd.write_custom_bitmap(4)
-	
+
+
+def print_large_number(x_pos, number):
+    switcher = {
+            0: display_0,
+            1: display_1,
+            2: display_2,
+            }
+
+    func = switcher.get(number, "nothing")
+
+    return func(x_pos)
 
 while (count > 0):
         cad.lcd.home()
         date = datetime.now()
 	
         cad.lcd.cursor_on()
-	display_2(3)
-	display_0(0)
-	display_1(6)
-	
+        display_2(3)
+        display_0(0)
+        display_1(6)
+
+        print_large_number(10,2)
+
 	
 #	cad.lcd.set_cursor(5,0)
 #	cad.lcd.write(date.strftime("%H:%M"))
