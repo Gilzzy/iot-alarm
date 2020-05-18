@@ -70,13 +70,83 @@ def display_2(x):
 	cad.lcd.write_custom_bitmap(3)
 	cad.lcd.write_custom_bitmap(4)
 	cad.lcd.write_custom_bitmap(4)
+	
+def display_3(x):
+	cad.lcd.set_cursor(x,0)
+	cad.lcd.write_custom_bitmap(6)
+	cad.lcd.write_custom_bitmap(6)
+	cad.lcd.write_custom_bitmap(2)
+	cad.lcd.set_cursor(x,1)
+	cad.lcd.write_custom_bitmap(4)
+	cad.lcd.write_custom_bitmap(4)
+	cad.lcd.write_custom_bitmap(5)
+	
+def display_4(x):
+	cad.lcd.set_cursor(x,0)
+	cad.lcd.write_custom_bitmap(3)
+	cad.lcd.write_custom_bitmap(4)
+	cad.lcd.write_custom_bitmap(7)
+	cad.lcd.set_cursor(x+1,1)
+	cad.lcd.write_custom_bitmap(7)
+	
+def display_5(x):
+	cad.lcd.set_cursor(x,0)
+	cad.lcd.write_custom_bitmap(3)
+	cad.lcd.write_custom_bitmap(6)
+	cad.lcd.write_custom_bitmap(6)
+	cad.lcd.set_cursor(x,1)
+	cad.lcd.write_custom_bitmap(4)
+	cad.lcd.write_custom_bitmap(4)
+	cad.lcd.write_custom_bitmap(5)
 
+def display_6(x):
+	cad.lcd.set_cursor(x,0)
+	cad.lcd.write_custom_bitmap(0)
+	cad.lcd.write_custom_bitmap(6)
+	cad.lcd.write_custom_bitmap(6)
+	cad.lcd.set_cursor(x,1)
+	cad.lcd.write_custom_bitmap(3)
+	cad.lcd.write_custom_bitmap(4)
+	cad.lcd.write_custom_bitmap(5)
+	
+def display_7(x):
+	cad.lcd.set_cursor(x,0)
+	cad.lcd.write_custom_bitmap(1)
+	cad.lcd.write_custom_bitmap(1)
+	cad.lcd.write_custom_bitmap(2)
+	cad.lcd.set_cursor(x+1,1)
+	cad.lcd.write_custom_bitmap(7)
+	
+def display_8(x):
+	cad.lcd.set_cursor(x,0)
+	cad.lcd.write_custom_bitmap(0)
+	cad.lcd.write_custom_bitmap(6)
+	cad.lcd.write_custom_bitmap(2)
+	cad.lcd.set_cursor(x,1)
+	cad.lcd.write_custom_bitmap(3)
+	cad.lcd.write_custom_bitmap(4)
+	cad.lcd.write_custom_bitmap(5)
 
+def display_9(x):
+	cad.lcd.set_cursor(x,0)
+	cad.lcd.write_custom_bitmap(0)
+	cad.lcd.write_custom_bitmap(6)
+	cad.lcd.write_custom_bitmap(2)
+	cad.lcd.set_cursor(x+1,1)
+	cad.lcd.write_custom_bitmap(7)
+	
 def print_large_number(x_pos, number):
     switcher = {
             0: display_0,
             1: display_1,
             2: display_2,
+	    3: display_3,
+	    4: display_4,
+            5: display_5,
+            6: display_6,
+            7: display_7,
+	    8: display_8,
+	    9: display_9,
             }
 
     func = switcher.get(number, "nothing")
@@ -88,12 +158,11 @@ while (count > 0):
         date = datetime.now()
 	
         cad.lcd.cursor_on()
-        display_2(3)
-        display_0(0)
-        display_1(6)
-
-        print_large_number(10,2)
-
+	
+	numbers = [0,1,2,3,4,5,6,7,8,9]
+	for x in numbers:
+		print_large_number(5,x)
+		time.sleep(.5)
 	
 #	cad.lcd.set_cursor(5,0)
 #	cad.lcd.write(date.strftime("%H:%M"))
