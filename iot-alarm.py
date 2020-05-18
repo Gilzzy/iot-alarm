@@ -3,6 +3,7 @@ import datetime
 import serial
 import csv
 import os
+import time
 
 from datetime import datetime
 import subprocess
@@ -53,13 +54,14 @@ def display_0(x):
 	cad.lcd.write_custom_bitmap(5)
 	
 def display_1(x):
-	cad.lcd.set_cursor(x,0)
-	cad.lcd.write_custom_bitmap(1)
-	cad.lcd.write_custom_bitmap(2)
-	cad.lcd.set_cursor(x,1)
-	cad.lcd.write_custom_bitmap(4)
-	cad.lcd.write_custom_bitmap(7)
-	cad.lcd.write_custom_bitmap(4)
+        cad.lcd.set_cursor(x,0)
+        cad.lcd.write_custom_bitmap(1)
+        cad.lcd.write_custom_bitmap(2)
+        cad.lcd.write(" ")
+        cad.lcd.set_cursor(x,1)
+        cad.lcd.write_custom_bitmap(4)
+        cad.lcd.write_custom_bitmap(7)
+        cad.lcd.write_custom_bitmap(4)
 	
 def display_2(x):
 	cad.lcd.set_cursor(x,0)
@@ -82,12 +84,13 @@ def display_3(x):
 	cad.lcd.write_custom_bitmap(5)
 	
 def display_4(x):
-	cad.lcd.set_cursor(x,0)
-	cad.lcd.write_custom_bitmap(3)
-	cad.lcd.write_custom_bitmap(4)
-	cad.lcd.write_custom_bitmap(7)
-	cad.lcd.set_cursor(x+1,1)
-	cad.lcd.write_custom_bitmap(7)
+    cad.lcd.set_cursor(x,0)
+    cad.lcd.write_custom_bitmap(3)
+    cad.lcd.write_custom_bitmap(4)
+    cad.lcd.write_custom_bitmap(7)
+    cad.lcd.set_cursor(x,1)
+    cad.lcd.write("  ")
+    cad.lcd.write_custom_bitmap(7)
 	
 def display_5(x):
 	cad.lcd.set_cursor(x,0)
@@ -110,12 +113,13 @@ def display_6(x):
 	cad.lcd.write_custom_bitmap(5)
 	
 def display_7(x):
-	cad.lcd.set_cursor(x,0)
-	cad.lcd.write_custom_bitmap(1)
-	cad.lcd.write_custom_bitmap(1)
-	cad.lcd.write_custom_bitmap(2)
-	cad.lcd.set_cursor(x+1,1)
-	cad.lcd.write_custom_bitmap(7)
+    cad.lcd.set_cursor(x,0)
+    cad.lcd.write_custom_bitmap(1)
+    cad.lcd.write_custom_bitmap(1)
+    cad.lcd.write_custom_bitmap(2)
+    cad.lcd.set_cursor(x,1)
+    cad.lcd.write("  ")
+    cad.lcd.write_custom_bitmap(7)
 	
 def display_8(x):
 	cad.lcd.set_cursor(x,0)
@@ -128,12 +132,13 @@ def display_8(x):
 	cad.lcd.write_custom_bitmap(5)
 
 def display_9(x):
-	cad.lcd.set_cursor(x,0)
-	cad.lcd.write_custom_bitmap(0)
-	cad.lcd.write_custom_bitmap(6)
-	cad.lcd.write_custom_bitmap(2)
-	cad.lcd.set_cursor(x+1,1)
-	cad.lcd.write_custom_bitmap(7)
+    cad.lcd.set_cursor(x,0)
+    cad.lcd.write_custom_bitmap(0)
+    cad.lcd.write_custom_bitmap(6)
+    cad.lcd.write_custom_bitmap(2)
+    cad.lcd.set_cursor(x,1)
+    cad.lcd.write("  ")
+    cad.lcd.write_custom_bitmap(7)
 	
 def print_large_number(x_pos, number):
     switcher = {
@@ -158,11 +163,11 @@ while (count > 0):
         date = datetime.now()
 	
         cad.lcd.cursor_on()
-	
-	numbers = [0,1,2,3,4,5,6,7,8,9]
-	for x in numbers:
-		print_large_number(5,x)
-		time.sleep(.5)
+        
+        numbers = [0,1,2,3,4,5,6,7,8,9]
+        for x in numbers:
+            print_large_number(5,x)
+            time.sleep(.5)
 	
 #	cad.lcd.set_cursor(5,0)
 #	cad.lcd.write(date.strftime("%H:%M"))
