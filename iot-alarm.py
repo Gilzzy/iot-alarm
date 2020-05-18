@@ -21,16 +21,34 @@ time_sleep = str("22:00")
 #current_date = str("2019/02/18")
 
 # the bit map for the number 1 in binary
-one0 = pifacecad.LCDBitmap([0b00001,0b00011,0b00111,0b01111,0b11101,0b11001,0b00001,0b00001])
+one0 = pifacecad.LCDBitmap([0b00001,0b00011,0b00111,0b01111,0b01101,0b01001,0b00001,0b00001])
 one1 = pifacecad.LCDBitmap([0b10000,0b10000,0b10000,0b10000,0b10000,0b10000,0b10000,0b10000])
-one2 = pifacecad.LCDBitmap([0b00001,0b00001,0b00001,0b00001,0b00001,0b01111,0b11111,0b01111])
-one3 = pifacecad.LCDBitmap([0b10000,0b10000,0b10000,0b10000,0b10000,0b11110,0b11111,0b11110])
+one2 = pifacecad.LCDBitmap([0b00001,0b00001,0b00001,0b00001,0b00001,0b01111,0b01111,0b01111])
+one3 = pifacecad.LCDBitmap([0b10000,0b10000,0b10000,0b10000,0b10000,0b11110,0b11110,0b11110])
 
 # the bit map for the number 2 in binary
 two0 = pifacecad.LCDBitmap([0b00111,0b01111,0b01111,0b01100,0b00000,0b00000,0b00000,0b00000])
 two1 = pifacecad.LCDBitmap([0b11000,0b11100,0b11110,0b01110,0b01110,0b01110,0b01110,0b11100])
-two2 = pifacecad.LCDBitmap([0b00000,0b00001,0b00011,0b00111,0b01110,0b01111,0b11111,0b01111])
-two3 = pifacecad.LCDBitmap([0b11000,0b10000,0b00000,0b00000,0b00000,0b11110,0b11111,0b11110])
+two2 = pifacecad.LCDBitmap([0b00000,0b00001,0b00011,0b00111,0b00111,0b01111,0b01111,0b01111])
+two3 = pifacecad.LCDBitmap([0b11000,0b10000,0b00000,0b00000,0b00000,0b11110,0b11110,0b11110])
+
+# the bit map for the number 3 in binary
+three0 = pifacecad.LCDBitmap([0b00011,0b00111,0b00111,0b00100,0b00000,0b00000,0b00000,0b00011])
+three1 = pifacecad.LCDBitmap([0b11000,0b11100,0b11110,0b01110,0b01110,0b01110,0b11100,0b11000])
+three2 = pifacecad.LCDBitmap([0b00011,0b00000,0b00000,0b00000,0b00100,0b01111,0b01111,0b00111])
+three3 = pifacecad.LCDBitmap([0b11100,0b01110,0b01110,0b01110,0b01110,0b11100,0b11100,0b11000])
+
+# the bit map for the number 4 in binary
+four0 = pifacecad.LCDBitmap([0b00000,0b00000,0b00001,0b00001,0b00011,0b00011,0b00110,0b00110])
+four1 = pifacecad.LCDBitmap([0b11100,0b11100,0b11100,0b11100,0b11100,0b11100,0b11100,0b11100])
+four2 = pifacecad.LCDBitmap([0b01100,0b11100,0b11111,0b11111,0b00000,0b00000,0b00000,0b00000])
+four3 = pifacecad.LCDBitmap([0b11100,0b11100,0b11111,0b11111,0b11100,0b11100,0b11100,0b11100])
+
+# the bit map for the number 5 in binary
+five0 = pifacecad.LCDBitmap([0b01111,0b01111,0b01110,0b01110,0b01110,0b01110,0b01111,0b01111])
+five1 = pifacecad.LCDBitmap([0b11100,0b11100,0b11100,0b00000,0b00000,0b00000,0b11000,0b11100])
+five2 = pifacecad.LCDBitmap([0b00000,0b00000,0b00000,0b00000,0b01000,0b01111,0b01111,0b00111])
+five3 = pifacecad.LCDBitmap([0b11110,0b01110,0b01110,0b01110,0b01110,0b11100,0b11000,0b10000])
 
 # storing the bitmaps to LCD memory
 cad.lcd.store_custom_bitmap(0, one0)
@@ -43,6 +61,20 @@ cad.lcd.store_custom_bitmap(5, two1)
 cad.lcd.store_custom_bitmap(6, two2)
 cad.lcd.store_custom_bitmap(7, two3)
 
+cad.lcd.store_custom_bitmap(8, three0)
+cad.lcd.store_custom_bitmap(9, three1)
+cad.lcd.store_custom_bitmap(10, three2)
+cad.lcd.store_custom_bitmap(11, three3)
+
+cad.lcd.store_custom_bitmap(12, four0)
+cad.lcd.store_custom_bitmap(13, four1)
+cad.lcd.store_custom_bitmap(14, four2)
+cad.lcd.store_custom_bitmap(15, four3)
+
+cad.lcd.store_custom_bitmap(16, five0)
+cad.lcd.store_custom_bitmap(17, five1)
+cad.lcd.store_custom_bitmap(18, five2)
+cad.lcd.store_custom_bitmap(19, five3)
 
 #time_alarm_test = datetime.strptime('%s %s'%(current_date, time_input),"%Y/%m/%d  %H:%M:%S")
 
