@@ -20,45 +20,28 @@ time_wake = str("06:30")
 time_sleep = str("22:00")
 #current_date = str("2019/02/18")
 
-# the bit map for the 4 characters that make up the tardis, in hex
-one0 = pifacecad.LCDBitmap([0b00001, 
-			    0b00011, 
-			    0b00111, 
-			    0b01111, 
-			    0b11101,
-			    0b11001, 
-			    0b00001, 
-			    0b00001])
-one1 = pifacecad.LCDBitmap([0b10000,
-			    0b10000,
-			    0b10000,
-			    0b10000,
-			    0b10000,
-			    0b10000,
-			    0b10000,
-			    0b10000])
-one2 = pifacecad.LCDBitmap([0b00001,
-			    0b00001,
-			    0b00001,
-			    0b00001,
-			    0b00001,
-			    0b01111,
-			    0b11111,
-			    0b01111])
-one3 = pifacecad.LCDBitmap([0b10000,
-			    0b10000,
-			    0b10000,
-			    0b10000,
-			    0b10000,
-			    0b11110,
-			    0b11111,
-			    0b11110])
+# the bit map for the number 1 in binary
+one0 = pifacecad.LCDBitmap([0b00001,0b00011,0b00111,0b01111,0b11101,0b11001,0b00001,0b00001])
+one1 = pifacecad.LCDBitmap([0b10000,0b10000,0b10000,0b10000,0b10000,0b10000,0b10000,0b10000])
+one2 = pifacecad.LCDBitmap([0b00001,0b00001,0b00001,0b00001,0b00001,0b01111,0b11111,0b01111])
+one3 = pifacecad.LCDBitmap([0b10000,0b10000,0b10000,0b10000,0b10000,0b11110,0b11111,0b11110])
+
+# the bit map for the number 2 in binary
+two0 = pifacecad.LCDBitmap([0b00111,0b01111,0b01111,0b01100,0b00000,0b00000,0b00000,0b00000])
+two1 = pifacecad.LCDBitmap([0b11000,0b11100,0b11110,0b01110,0b01110,0b01110,0b01110,0b11100])
+two2 = pifacecad.LCDBitmap([0b00000,0b00001,0b00011,0b00111,0b01110,0b01111,0b11111,0b01111])
+two3 = pifacecad.LCDBitmap([0b11000,0b10000,0b00000,0b00000,0b00000,0b11110,0b11111,0b11110])
 
 # storing the bitmaps to LCD memory
 cad.lcd.store_custom_bitmap(0, one0)
 cad.lcd.store_custom_bitmap(1, one1)
 cad.lcd.store_custom_bitmap(2, one2)
 cad.lcd.store_custom_bitmap(3, one3)
+
+cad.lcd.store_custom_bitmap(4, two0)
+cad.lcd.store_custom_bitmap(5, two1)
+cad.lcd.store_custom_bitmap(6, two2)
+cad.lcd.store_custom_bitmap(7, two3)
 
 
 #time_alarm_test = datetime.strptime('%s %s'%(current_date, time_input),"%Y/%m/%d  %H:%M:%S")
@@ -79,6 +62,12 @@ while (count > 0):
         cad.lcd.set_cursor(0,1)
         cad.lcd.write_custom_bitmap(2)
         cad.lcd.write_custom_bitmap(3)
+	cad.lcd.set_cursor(3,0)
+	cad.lcd.write_custom_bitmap(4)
+        cad.lcd.write_custom_bitmap(5)
+        cad.lcd.set_cursor(3,1)
+        cad.lcd.write_custom_bitmap(6)
+        cad.lcd.write_custom_bitmap(7)
 
 
 #	print(time_alarm)
