@@ -62,10 +62,10 @@ while (count > 0):
         cad.lcd.set_cursor(0,1)
         cad.lcd.write_custom_bitmap(2)
         cad.lcd.write_custom_bitmap(3)
-	cad.lcd.set_cursor(3,0)
-	cad.lcd.write_custom_bitmap(4)
+        cad.lcd.set_cursor(2,0)
+        cad.lcd.write_custom_bitmap(4)
         cad.lcd.write_custom_bitmap(5)
-        cad.lcd.set_cursor(3,1)
+        cad.lcd.set_cursor(2,1)
         cad.lcd.write_custom_bitmap(6)
         cad.lcd.write_custom_bitmap(7)
 
