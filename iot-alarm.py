@@ -36,9 +36,9 @@ cad.lcd.store_custom_bitmap(3, tardis3)
 #time_alarm_test = datetime.strptime('%s %s'%(current_date, time_input),"%Y/%m/%d  %H:%M:%S")
 
 while (count > 0):
-#	cad.lcd.home()
-#	date = datetime.now()
-#	cad.lcd.cursor_on()
+        cad.lcd.home()
+        date = datetime.now()
+        cad.lcd.cursor_on()
 #	cad.lcd.set_cursor(5,0)
 #	cad.lcd.write(date.strftime("%H:%M"))
 #	cad.lcd.set_cursor(0,2)
@@ -46,31 +46,32 @@ while (count > 0):
 #	cad.lcd.cursor_off()
 	
 	# draw the tardis
-	cad.lcd.write_custom_bitmap(0)
-	cad.lcd.write_custom_bitmap(1)
-	cad.lcd.set_cursor(0,1)
-	cad.lcd.write_custom_bitmap(2)
-	cad.lcd.write_custom_bitmap(3)
+        cad.lcd.write_custom_bitmap(0)
+        cad.lcd.write_custom_bitmap(1)
+        cad.lcd.set_cursor(0,1)
+        cad.lcd.write_custom_bitmap(2)
+        cad.lcd.write_custom_bitmap(3)
 
 
 #	print(time_alarm)
 #	print(time_input)
 #	print(date.strftime("%H:%M:%S"))
 
-	if backlight == 0:
-		if time_wake == date.strftime("%H:%M"):
-			cad.lcd.backlight_on()
-			backlight = 1
-	else :
-		if time_sleep == date.strftime("%H:%M"):
-			cad.lcd.backlight_off()
-			backlight = 0
+#	if backlight == 0:
+#		if time_wake == date.strftime("%H:%M"):
+#			cad.lcd.backlight_on()
+#			backlight = 1
+#	else :
+#		if time_sleep == date.strftime("%H:%M"):
+#			cad.lcd.backlight_off()
+#			backlight = 0
 
-	if cad.switches[4].value:
-		if backlight == 1:
-			cad.lcd.backlight_off()
-			backlight = 0
-		else :
-			cad.lcd.backlight_on()
-			backlight = 1
-	time.sleep(.5)
+#	if cad.switches[4].value:
+#		if backlight == 1:
+#			cad.lcd.backlight_off()
+#			backlight = 0
+#		else :
+#			cad.lcd.backlight_on()
+#			backlight = 1
+#	time.sleep(.5)
+        
