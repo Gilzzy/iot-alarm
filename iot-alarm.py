@@ -88,20 +88,44 @@ while (count > 0):
 #	cad.lcd.write(date.strftime("%a %-d %b %Y"))
 #	cad.lcd.cursor_off()
 	
-	# draw the tardis
+	# draw number 1
         cad.lcd.write_custom_bitmap(0)
         cad.lcd.write_custom_bitmap(1)
         cad.lcd.set_cursor(0,1)
         cad.lcd.write_custom_bitmap(2)
         cad.lcd.write_custom_bitmap(3)
+	# draw number 2
         cad.lcd.set_cursor(2,0)
         cad.lcd.write_custom_bitmap(4)
         cad.lcd.write_custom_bitmap(5)
         cad.lcd.set_cursor(2,1)
         cad.lcd.write_custom_bitmap(6)
         cad.lcd.write_custom_bitmap(7)
+	# draw number 3
+	cad.lcd.set_cursor(4,0)
+        cad.lcd.write_custom_bitmap(8)
+        cad.lcd.write_custom_bitmap(9)
+        cad.lcd.set_cursor(4,1)
+        cad.lcd.write_custom_bitmap(10)
+        cad.lcd.write_custom_bitmap(11)
 
+	# draw number 4
+	cad.lcd.set_cursor(6,0)
+        cad.lcd.write_custom_bitmap(12)
+        cad.lcd.write_custom_bitmap(13)
+        cad.lcd.set_cursor(6,1)
+        cad.lcd.write_custom_bitmap(14)
+        cad.lcd.write_custom_bitmap(15)
+	
 
+	# draw number 5
+	cad.lcd.set_cursor(8,0)
+        cad.lcd.write_custom_bitmap(16)
+        cad.lcd.write_custom_bitmap(17)
+        cad.lcd.set_cursor(8,1)
+        cad.lcd.write_custom_bitmap(18)
+        cad.lcd.write_custom_bitmap(19)
+	
 #	print(time_alarm)
 #	print(time_input)
 #	print(date.strftime("%H:%M:%S"))
