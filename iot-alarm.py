@@ -42,18 +42,44 @@ cad.lcd.store_custom_bitmap(7, block)
 
 #time_alarm_test = datetime.strptime('%s %s'%(current_date, time_input),"%Y/%m/%d  %H:%M:%S")
 
+public static void display_large_number(byte n, byte x){ # n is number to display, x is column of upper left corner for large character
+	switch (n) {
+		case 0:
+			cad.lcd.set_cursor(x,0)
+			cad.lcd.write_custom_bitmap(0)
+			cad.lcd.write_custom_bitmap(1)
+			cad.lcd.write_custom_bitmap(2)
+			cad.lcd.set_cursor(x,1)
+			cad.lcd.write_custom_bitmap(3)
+			cad.lcd.write_custom_bitmap(4)
+			cad.lcd.write_custom_bitmap(5)
+			break
+		case 1:
+			cad.lcd.set_cursor(x,0)
+			cad.lcd.write_custom_bitmap(1)
+			cad.lcd.write_custom_bitmap(2)
+			cad.lcd.set_cursor(x,1)
+			cad.lcd.write_custom_bitmap(4)
+			cad.lcd.write_custom_bitmap(7)
+			cad.lcd.write_custom_bitmap(4)
+			break
+		case 2:
+			cad.lcd.set_cursor(x,0)
+			cad.lcd.write_custom_bitmap(6)
+			cad.lcd.write_custom_bitmap(6)
+			cad.lcd.write_custom_bitmap(2)
+			cad.lcd.set_cursor(x,1)
+			cad.lcd.write_custom_bitmap(3)
+			cad.lcd.write_custom_bitmap(4)
+			cad.lcd.write_custom_bitmap(4)
+			break
+
 while (count > 0):
         cad.lcd.home()
         date = datetime.now()
 	
         cad.lcd.cursor_on()
-	cad.lcd.write_custom_bitmap(0)
-	cad.lcd.write_custom_bitmap(1)
-	cad.lcd.write_custom_bitmap(2)
-	cad.lcd.set_cursor(0,1)
-	cad.lcd.write_custom_bitmap(3)
-	cad.lcd.write_custom_bitmap(4)
-	cad.lcd.write_custom_bitmap(5)
+	display_large_number(2,4)
 	
 	
 #	cad.lcd.set_cursor(5,0)
