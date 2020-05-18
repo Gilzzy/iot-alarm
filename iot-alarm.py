@@ -21,16 +21,44 @@ time_sleep = str("22:00")
 #current_date = str("2019/02/18")
 
 # the bit map for the 4 characters that make up the tardis, in hex
-tardis0 = pifacecad.LCDBitmap([0x1, 0x7, 0xF, 0xF, 0x9, 0x9, 0x9, 0xF])
-tardis1 = pifacecad.LCDBitmap([0x10, 0x1c, 0x1e, 0x1e, 0x12, 0x12, 0x12, 0x1e])
-tardis2 = pifacecad.LCDBitmap([0xf, 0x9, 0x9, 0x9, 0xf, 0xf, 0xf, 0x1f])
-tardis3 = pifacecad.LCDBitmap([0x1e, 0x1e, 0x1e, 0x1e, 0x1e, 0x1e, 0x1e, 0x1f])
+one0 = pifacecad.LCDBitmap([0b00001, 
+			    0b00011, 
+			    0b00111, 
+			    0b01111, 
+			    0b11101,
+			    0b11001, 
+			    0b00001, 
+			    0b00001])
+one1 = pifacecad.LCDBitmap([0b10000,
+			    0b10000,
+			    0b10000,
+			    0b10000,
+			    0b10000,
+			    0b10000,
+			    0b10000,
+			    0b10000])
+one2 = pifacecad.LCDBitmap([0b00001,
+			    0b00001,
+			    0b00001,
+			    0b00001,
+			    0b00001,
+			    0b01111,
+			    0b11111,
+			    0b01111])
+one3 = pifacecad.LCDBitmap([0b10000,
+			    0b10000,
+			    0b10000,
+			    0b10000,
+			    0b10000,
+			    0b11110,
+			    0b11111,
+			    0b11110])
 
 # storing the bitmaps to LCD memory
-cad.lcd.store_custom_bitmap(0, tardis0)
-cad.lcd.store_custom_bitmap(1, tardis1)
-cad.lcd.store_custom_bitmap(2, tardis2)
-cad.lcd.store_custom_bitmap(3, tardis3)
+cad.lcd.store_custom_bitmap(0, one0)
+cad.lcd.store_custom_bitmap(1, one1)
+cad.lcd.store_custom_bitmap(2, one2)
+cad.lcd.store_custom_bitmap(3, one3)
 
 
 #time_alarm_test = datetime.strptime('%s %s'%(current_date, time_input),"%Y/%m/%d  %H:%M:%S")
