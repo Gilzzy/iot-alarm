@@ -161,13 +161,27 @@ def print_large_number(x_pos, number):
 while (count > 0):
         cad.lcd.home()
         date = datetime.now()
-	
         cad.lcd.cursor_on()
-        
+
+        time_str = date.strftime("%I%M")
+
+        time = [int(i) for i in str(time_str)]
+
+        cad.lcd.set_cursor(7,0)
+        cad.lcd.write(".")
+        cad.lcd.set_cursor(7,1)
+        cad.lcd.write(".")
+
+
+        print_large_number(0,time[0])
+        print_large_number(4,time[1])
+        print_large_number(8,time[2])
+        print_large_number(12,time[3])
+
         numbers = [0,1,2,3,4,5,6,7,8,9]
-        for x in numbers:
-            print_large_number(5,x)
-            time.sleep(.5)
+#        for x in numbers:
+#            print_large_number(8,x)
+#            time.sleep(.5)
 	
 #	cad.lcd.set_cursor(5,0)
 #	cad.lcd.write(date.strftime("%H:%M"))
